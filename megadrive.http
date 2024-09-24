@@ -3,9 +3,9 @@ POST http://localhost:4000/register
 Content-Type: application/json
 
 {
-    "username":"sharon",
-    "email":"sharoncheran@gmail.com",
-    "password":"74qa+-*/"
+    "username":"hannah",
+    "email":"hannah@gmail.com",
+    "password":"19942004"
 }
 
 ###
@@ -14,8 +14,8 @@ POST http://localhost:4000/login
 Content-Type: application/json
 
 {
-    "username":"sharonraj",
-    "password":"74qa+-*/"
+    "username":"hannah",
+    "password":"19942004"
 }
 
 
@@ -39,17 +39,17 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 ###
 GET http://localhost:4000/todos/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJoYW5uYWgiLCJlbWFpbCI6Imhhbm5haEBnbWFpbC5jb20iLCJpYXQiOjE3MjcyMDAyODd9.z17SbqnccYWMW2QG8OSYcRLV_T7PzKVqiG0aauv6oy4
 
 ###
 
 POST http://localhost:4000/todos
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJoYW5uYWgiLCJlbWFpbCI6Imhhbm5haEBnbWFpbC5jb20iLCJpYXQiOjE3MjcyMDAyODd9.z17SbqnccYWMW2QG8OSYcRLV_T7PzKVqiG0aauv6oy4
 
 {
-    "todo": "Study for Your University Exams",
-    "description": "study Author portion within an Hour",
+    "todo": "Plan for Pondichery Trip",
+    "description": "Buy some clothes for the trip",
     "status": "pending",
     "priority": "MEDIUM"
 }
@@ -58,7 +58,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 PUT http://localhost:4000/todos/bb5f7b78-0164-4048-a3f9-aef59d34a48a
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJoYW5uYWgiLCJlbWFpbCI6Imhhbm5haEBnbWFpbC5jb20iLCJpYXQiOjE3MjcyMDAyODd9.z17SbqnccYWMW2QG8OSYcRLV_T7PzKVqiG0aauv6oy4
 
 {
     "todo": "Study for Your Interview",
@@ -70,7 +70,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 PUT http://localhost:4000/status/bb5f7b78-0164-4048-a3f9-aef59d34a48a
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJoYW5uYWgiLCJlbWFpbCI6Imhhbm5haEBnbWFpbC5jb20iLCJpYXQiOjE3MjcyMDAyODd9.z17SbqnccYWMW2QG8OSYcRLV_T7PzKVqiG0aauv6oy4
 
 {
     "status":"in progress"
@@ -80,4 +80,4 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 DELETE http://localhost:4000/todos/97bc0c11-1e34-4610-81ae-735285b1c9ce
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJoYW5uYWgiLCJlbWFpbCI6Imhhbm5haEBnbWFpbC5jb20iLCJpYXQiOjE3MjcyMDAyODd9.z17SbqnccYWMW2QG8OSYcRLV_T7PzKVqiG0aauv6oy4
