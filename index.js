@@ -68,6 +68,15 @@ const todoDetails = (eachTodo)=>{
     }
 }
 
+const userDetails = (eachUser)=>{
+    return{
+        id:eachUser.id,
+        username:eachUser.username,
+        email:eachUser.email,
+        password:eachUser.password
+    }
+}
+
 //user registeration API
 app.post("/register",async(request,response)=>{
     const {username,password,email} = request.body
@@ -113,14 +122,26 @@ app.post("/login",async(request,response)=>{
 
 })
 
+//get user
+app.get("/getuser",authenticationToken,async(request,response)=>{
+    const {user_id} = request
+    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUserDetails = await db.all(getUser)
+    response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
+})
+
 //edit user API
-app.put("/editUser",authenticationToken,async(request,response)=>{
+app.put("/edituser",authenticationToken,async(request,response)=>{
+    const {user_id} = request
     const {username,password,email} = request.body
     const hashPassword = await bcrypt.hash(password,10)
     const updateUserQuery = `
-    UPDATE users SET users username = "${username}", email = "${email}", password = "${hashPassword}";
+    UPDATE users SET username = "${username}", email = "${email}", password = "${hashPassword}";
     `
     await db.run(updateUserQuery)
+    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUserDetails = await db.all(getUser)
+    response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
 
 //get todo List API

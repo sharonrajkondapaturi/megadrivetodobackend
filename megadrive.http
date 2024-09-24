@@ -3,7 +3,8 @@ POST http://localhost:4000/register
 Content-Type: application/json
 
 {
-    "username":"sharonraj",
+    "username":"sharon",
+    "email":"sharoncheran@gmail.com",
     "password":"74qa+-*/"
 }
 
@@ -17,21 +18,39 @@ Content-Type: application/json
     "password":"74qa+-*/"
 }
 
+
+###
+GET http://localhost:4000/getuser/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+
+###
+
+PUT http://localhost:4000/edituser/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
+
+{
+    "username":"sharonraj",
+    "email":"sharoncheran@gmail.com",
+    "password":"74qa+-*/"
+}
+
 ###
 GET http://localhost:4000/todos/
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
 
 ###
 
 POST http://localhost:4000/todos
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
 
 {
-    "todo": "Study for Your Exams",
-    "description": "study Aptitude for Half an Hour",
-    "status": "done",
+    "todo": "Study for Your University Exams",
+    "description": "study Author portion within an Hour",
+    "status": "pending",
     "priority": "MEDIUM"
 }
 
@@ -39,7 +58,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 PUT http://localhost:4000/todos/bb5f7b78-0164-4048-a3f9-aef59d34a48a
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
 
 {
     "todo": "Study for Your Interview",
@@ -51,7 +70,7 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 PUT http://localhost:4000/status/bb5f7b78-0164-4048-a3f9-aef59d34a48a
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
 
 {
     "status":"in progress"
@@ -61,4 +80,4 @@ Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hb
 
 DELETE http://localhost:4000/todos/97bc0c11-1e34-4610-81ae-735285b1c9ce
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InNoYXJvbmNoZXJhbkBnbWFpbC5jb20iLCJpYXQiOjE3MjcxOTk3NTd9.L3JrPFOSi0N3yNQnjQNAkIbI-UR5z24qMrpszn6yhH8
