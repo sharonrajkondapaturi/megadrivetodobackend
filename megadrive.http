@@ -1,0 +1,64 @@
+###
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+    "username":"sharonraj",
+    "password":"74qa+-*/"
+}
+
+###
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username":"sharonraj",
+    "password":"74qa+-*/"
+}
+
+###
+GET http://localhost:4000/todos/
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+
+###
+
+POST http://localhost:4000/todos
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+
+{
+    "todo": "Study for Your Exams",
+    "description": "study Aptitude for Half an Hour",
+    "status": "done",
+    "priority": "MEDIUM"
+}
+
+###
+
+PUT http://localhost:4000/todos/bb5f7b78-0164-4048-a3f9-aef59d34a48a
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+
+{
+    "todo": "Study for Your Interview",
+    "description": "study Aptitude for half an Hour",
+    "priority": "MEDIUM"
+}
+
+###
+
+PUT http://localhost:4000/status/bb5f7b78-0164-4048-a3f9-aef59d34a48a
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
+
+{
+    "status":"in progress"
+}
+
+###
+
+DELETE http://localhost:4000/todos/97bc0c11-1e34-4610-81ae-735285b1c9ce
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJzaGFyb25yYWoiLCJlbWFpbCI6InVuZGVmaW5lZCIsImlhdCI6MTcyNzE5MjM4NX0.o2viF-FIefNixVFkz1Vq45Wy9n85y2qvPdkHqG-mBkA
