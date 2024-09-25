@@ -130,7 +130,7 @@ app.get("/getuser",authenticationToken,async(request,response)=>{
 })
 
 //edit user API
-app.put("/edituse/:id",authenticationToken,async(request,response)=>{
+app.put("/edituser/:id",authenticationToken,async(request,response)=>{
     const {id} = request.params
     const {username} = request.body
     const updateUserQuery = `
