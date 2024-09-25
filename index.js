@@ -130,11 +130,11 @@ app.get("/getuser",authenticationToken,async(request,response)=>{
 })
 
 //edit user API
-app.put("/edituser",authenticationToken,async(request,response)=>{
-    const {user_id} = request
+app.put("/edituse/:id",authenticationToken,async(request,response)=>{
+    const {id} = request.params
     const {username} = request.body
     const updateUserQuery = `
-    UPDATE users SET username = "${username}" WHERE id=${user_id};
+    UPDATE users SET username = "${username}" WHERE id=${id};
     `
     await db.run(updateUserQuery)
     const getUser = `SELECT * FROM users WHERE id = ${user_id};`
@@ -143,25 +143,25 @@ app.put("/edituser",authenticationToken,async(request,response)=>{
 })
 
 //edit password API
-app.put("/editpassword",authenticationToken,async(request,response)=>{
-    const {user_id} = request
+app.put("/editpassword/:id",authenticationToken,async(request,response)=>{
+    const {id} = request.params
     const {password} = request.body
     const hashPassword = await bcrypt.hash(password,10)
     const updateUserQuery = `
     UPDATE users SET password = "${hashPassword}" WHERE id=${user_id};
     `
     await db.run(updateUserQuery)
-    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUser = `SELECT * FROM users WHERE id = ${id};`
     const getUserDetails = await db.all(getUser)
     response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
 
 //edit email API
-app.put("/editemail",authenticationToken,async(request,response)=>{
-    const {user_id} = request
+app.put("/editemail/:id",authenticationToken,async(request,response)=>{
+    const {id} = request.params
     const {email} = request.body
     const updateUserQuery = `
-    UPDATE users SET email = "${email}" WHERE id=${user_id};
+    UPDATE users SET email = "${email}" WHERE id=${id};
     `
     await db.run(updateUserQuery)
     const getUser = `SELECT * FROM users WHERE id = ${user_id};`
@@ -170,13 +170,13 @@ app.put("/editemail",authenticationToken,async(request,response)=>{
 })
 
 //delete user API
-app.delete("/deleteuser",authenticationToken,async(request,response)=>{
-    const {user_id} = request
+app.delete("/deleteuser/:id",authenticationToken,async(request,response)=>{
+    const {id} = request.params
     const deleteUserQuery = `
     DELETE FROM todos WHERE id = "${user_id}";
     `
     await db.run(deleteUserQuery)
-    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUser = `SELECT * FROM users WHERE id = ${id};`
     const getUserDetails = await db.all(getUser)
     response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
