@@ -137,7 +137,7 @@ app.put("/edituser/:id",authenticationToken,async(request,response)=>{
     UPDATE users SET username = "${username}" WHERE id=${id};
     `
     await db.run(updateUserQuery)
-    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUser = `SELECT * FROM users WHERE id = ${id};`
     const getUserDetails = await db.all(getUser)
     response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
@@ -148,7 +148,7 @@ app.put("/editpassword/:id",authenticationToken,async(request,response)=>{
     const {password} = request.body
     const hashPassword = await bcrypt.hash(password,10)
     const updateUserQuery = `
-    UPDATE users SET password = "${hashPassword}" WHERE id=${user_id};
+    UPDATE users SET password = "${hashPassword}" WHERE id=${id};
     `
     await db.run(updateUserQuery)
     const getUser = `SELECT * FROM users WHERE id = ${id};`
@@ -164,7 +164,7 @@ app.put("/editemail/:id",authenticationToken,async(request,response)=>{
     UPDATE users SET email = "${email}" WHERE id=${id};
     `
     await db.run(updateUserQuery)
-    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUser = `SELECT * FROM users WHERE id = ${id};`
     const getUserDetails = await db.all(getUser)
     response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
