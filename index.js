@@ -143,6 +143,18 @@ app.put("/edituser",authenticationToken,async(request,response)=>{
     response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
 })
 
+//delete user API
+app.delete("/deleteuser",authenticationToken,async(request,response)=>{
+    const {user_id} = request
+    const deleteUserQuery = `
+    DELETE FROM todos WHERE id = "${user_id}";
+    `
+    await db.run(deleteUserQuery)
+    const getUser = `SELECT * FROM users WHERE id = ${user_id};`
+    const getUserDetails = await db.all(getUser)
+    response.send(getUserDetails.map(eachUser=> userDetails(eachUser)))
+})
+
 //get todo List API
 app.get("/todos",authenticationToken,async(request,response)=>{
     const {user_id} = request 
